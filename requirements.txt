@@ -1,0 +1,8 @@
+eth-account
+x402
+python-dotenv
+opencv-python
+pyaudio
+numpy
+openai
+elevenlabs
