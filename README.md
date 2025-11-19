@@ -53,7 +53,6 @@ Microphone         Transcription         Speakers
 ### Prerequisites
 
 - Python 3.8 or higher
-- ffmpeg (required for TTS audio conversion)
 - Microphone and speakers/headphones
 - API keys for:
   - OpenAI (for Whisper STT)
@@ -66,23 +65,7 @@ Microphone         Transcription         Speakers
 pip install -r requirements.txt
 ```
 
-### Step 2: Install ffmpeg
-
-**Windows:**
-- Download from [ffmpeg.org](https://ffmpeg.org/download.html)
-- Add to PATH or place in project directory
-
-**macOS:**
-```bash
-brew install ffmpeg
-```
-
-**Linux:**
-```bash
-sudo apt-get install ffmpeg
-```
-
-### Step 3: Configure Environment Variables
+### Step 2: Configure Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -100,14 +83,6 @@ ELEVENLABS_VOICE_ID=your-voice-id
 # Optional: Agent configuration
 AGENT_NAME=0xdacd02dd0ce8a923ad26d4c49bb94ece09306c3e  # Default Wiz token ID
 SENDER_NAME=User
-```
-
-### Step 4: Configure Backend URL
-
-Edit `main.py` and update the `BACKEND_URL` variable:
-
-```python
-BACKEND_URL = "http://localhost:5173/paid"  # Your backend API URL
 ```
 
 ## Usage
@@ -239,7 +214,6 @@ class MyModule(ModuleBase):
 **Problem**: Audio playback not working
 - Check speakers/headphones are connected
 - Verify audio output device in system settings
-- Ensure ffmpeg is installed and in PATH
 
 ### API Issues
 
@@ -258,13 +232,6 @@ class MyModule(ModuleBase):
 - Check backend server is running
 - Ensure `MNEMONIC` is set for x402 payments
 - Check network connectivity
-
-### ffmpeg Issues
-
-**Problem**: "ffmpeg not found" error
-- Install ffmpeg and add to PATH
-- On Windows, you can place ffmpeg.exe in the project directory
-- Verify installation: `ffmpeg -version`
 
 ## Project Structure
 
